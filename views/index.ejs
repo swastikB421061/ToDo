@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  
+    <div class="container">
+      <h1>To Do List</h1>
+      <form action="/" method="post" class="cform">
+        <input type="text" id="title" name="title" placeholder="Title" required />
+        <textarea
+          id="description"
+          placeholder="Description "
+          name="desc"
+          required
+        ></textarea>
+
+        <button type="submit">ADD</button>
+      </form>
+      
+      <% todo.forEach((value,index)=>{  %>
+        <form class="task" method="post" action="/delete">
+        <div>
+          <p><%= value.title %></p>
+          <span><%= value.desc %></span>
+        </div>
+        <input type="hidden" name="taskId" value="<%= value.id %>">
+        <button class="deletebtn" >-</button>
+      </form>
+     <%  }) %>
+
+    
+  </div>
+  </body>
+  <script>
+
+  </script>
+</html>
